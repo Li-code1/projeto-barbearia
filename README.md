@@ -1,4 +1,3 @@
----
 
 ```markdown
 # Barbearia Estilo Livre 🪒✂️
