@@ -35,10 +35,12 @@ Aqui estão as capturas de tela comparando o desempenho antes e depois das otimi
 
 ### Relatório Inicial (Antes)
 ![Relatório Inicial](relatorio-antes1.JPG)
+![Relatório Inicial](relatorio-antes2.JPG)
 *Nota de performance: 80. LCP alto devido a imagens não otimizadas.*
 
 ### Relatório Final (Depois)
 ![Relatório Final](relatorio-depois1.JPG)
+![Relatório Final](relatorio-depois2.JPG)
 *Nota de performance: 90. Melhoria significativa no LCP e TBT após as correções.*
 
 
