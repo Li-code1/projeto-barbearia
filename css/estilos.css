@@ -1,93 +1,85 @@
-/* Paleta personalizada */
-:root {
-  --bs-primary: #8B4513;   /* marrom */
-  --bs-secondary: #FFD700; /* dourado */
-  --bs-dark: #212529;
-  --bs-light: #f8f9fa;
-}
-
-/* Corpo */
+/* 1. CONFIGURAÇÕES GERAIS */
 body {
-  background-color: var(--bs-light);
-  color: var(--bs-dark);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
-/* Títulos */
-h2 {
-  color: var(--bs-primary);
-  font-weight: 700;
+/* 2. MELHORIA DE PERFORMANCE (IMAGENS)
+   Isso impede que as imagens "pulem" ou fiquem distorcidas 
+   quando o navegador lê o width/height que colocamos no HTML */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-/* Navbar logo */
+/* 3. NAVBAR */
 .navbar-brand img {
-  width: 40px;   /* tamanho fixo */
-  height: 40px;
-  object-fit: cover;
+    max-height: 40px;
 }
 
-/* Seção Sobre Nós */
-#sobre img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.75rem;
-  display: block;
-  margin: 0 auto;
+/* 4. HOME / HERO SECTION */
+#home {
+    /* Mantendo a cor original do seu projeto */
+    padding: 100px 0;
 }
 
-/* Imagens dos cards de serviços */
-#servicos .card-img-top {
-  width: 100%;
-  height: 220px;       /* altura uniforme */
-  object-fit: cover;   /* corta excesso mantendo proporção */
-  border-radius: 0.5rem 0.5rem 0 0;
+/* 5. SERVIÇOS (CARDS) */
+.card {
+    border: 1px solid #0d6efd; /* Cor original do Bootstrap primary */
+    transition: transform 0.2s;
 }
 
-/* Carousel depoimentos */
-#depoimentos blockquote {
-  font-size: 1.25rem;
-  font-style: italic;
-  color: var(--bs-dark);
+.card:hover {
+    transform: scale(1.02);
 }
 
-/* Formulário de contato */
-#contato .form-control {
-  border-radius: 0.5rem;
-  border: 1px solid rgba(0,0,0,0.2);
+.card-img-top {
+    /* Garante que o espaço da imagem exista antes dela carregar (Performance) */
+    aspect-ratio: 16 / 9;
+    width: 100%;
 }
 
-/* Botões */
-.btn-primary {
-  background-color: var(--bs-primary);
-  border-color: var(--bs-primary);
+/* 6. DEPOIMENTOS (CARROSSEL) */
+#depoimentos {
+    background-color: #ffffff;
 }
 
-.btn-primary:hover {
-  background-color: #6A2E0A; /* marrom mais escuro */
-  border-color: #6A2E0A;
+.carousel-item {
+    padding: 40px 0;
+    min-height: 200px; /* Evita que o site mude de tamanho conforme o texto do depoimento */
 }
 
-.btn-secondary {
-  background-color: var(--bs-secondary);
-  border-color: var(--bs-secondary);
-  color: var(--bs-dark);
+.blockquote p {
+    font-size: 1.2rem;
+    color: #555;
 }
 
-.btn-secondary:hover {
-  background-color: #e6c200;
-  border-color: #e6c200;
-  color: var(--bs-dark);
+/* Ajuste para as setas do carrossel ficarem visíveis no fundo branco */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) grayscale(100);
 }
 
-/* Footer */
+/* 7. CONTATO E FOOTER */
+#contato {
+    background-color: #f8f9fa; /* Cor bg-light original */
+}
+
 footer {
-  background-color: var(--bs-primary);
-  color: var(--bs-light);
+    font-size: 0.9rem;
 }
 
-/* Responsividade extra */
+/* 8. AJUSTE DE RESPONSIVIDADE */
 @media (max-width: 768px) {
-  #servicos .card-img-top {
-    height: 180px;
-  }
+    #home h1 {
+        font-size: 2rem;
+    }
+    
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
 }
